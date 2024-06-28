@@ -1,5 +1,8 @@
+import { ChakraBaseProvider } from '@chakra-ui/react';
+import { theme } from './theme';
+
 function App() {
-  return <div></div>;
+  return <ChakraBaseProvider theme={theme}></ChakraBaseProvider>;
 }
 
 export default App;
