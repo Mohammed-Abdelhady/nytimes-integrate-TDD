@@ -1,5 +1,11 @@
 import React from 'react';
-import { Box, Heading, ListItem, UnorderedList } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  Button,
+  UnorderedList,
+  ListItem,
+} from '@chakra-ui/react';
 import { useFetchAllSectionsQuery } from 'lib/slices/articlesSlice';
 import { useSearchParams } from 'react-router-dom';
 
@@ -8,7 +14,11 @@ import { useSearchParams } from 'react-router-dom';
  */
 const ArticlesSections = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const { data: sections } = useFetchAllSectionsQuery({
+  const {
+    data: sections,
+    isLoading,
+    isError,
+  } = useFetchAllSectionsQuery({
     period: Number(searchParams.get('period')) || 1,
   });
 
@@ -25,25 +35,36 @@ const ArticlesSections = () => {
 
   return (
     <Box>
-      <Heading size="md">Sections</Heading>
+      <Heading size="md" mb="3">
+        Sections
+      </Heading>
       <UnorderedList styleType="none" width="max-content" minW="100px">
-        <ListItem
-          as="button"
-          display="block"
-          mt="3"
-          onClick={() => handleSectionClick('')}>
-          All
+        <ListItem>
+          <Button
+            variant="ghost"
+            color={searchParams.get('section') ? 'gray.500' : ''}
+            onClick={() => handleSectionClick('')}>
+            All
+          </Button>
         </ListItem>
-        {sections?.map((section) => (
-          <ListItem
-            as="button"
-            display="block"
-            mt="3"
-            onClick={() => handleSectionClick(section)}
-            key={section}>
-            {section}
-          </ListItem>
-        ))}
+        {isError ? (
+          <ListItem>Error loading sections</ListItem>
+        ) : isLoading ? (
+          <ListItem>Loading sections...</ListItem>
+        ) : (
+          sections?.map((section) => (
+            <ListItem key={section}>
+              <Button
+                variant="ghost"
+                color={
+                  section === searchParams.get('section') ? 'blue.500' : ''
+                }
+                onClick={() => handleSectionClick(section)}>
+                {section}
+              </Button>
+            </ListItem>
+          ))
+        )}
       </UnorderedList>
     </Box>
   );
