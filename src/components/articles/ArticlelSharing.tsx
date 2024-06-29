@@ -9,6 +9,11 @@ import {
   LinkedinIcon,
 } from 'react-share';
 
+/**
+ * Renders the sharing buttons for Facebook, Twitter, and LinkedIn.
+ *
+ * @return {JSX.Element} The rendered sharing buttons component.
+ */
 const ArticlelSharing = () => {
   const shareProps = {
     url: window.location.href,

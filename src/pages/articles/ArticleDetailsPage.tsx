@@ -1,45 +1,37 @@
 import { Breadcrumb, BreadcrumbItem } from '@chakra-ui/react';
 import ArticleDetails from 'components/articles/ArticleDetails';
+import ArticleDetailsSkeleton from 'components/skeletons/ArticleDetailsSkeleton';
 import { useFetchSingleArticleQuery } from 'lib/slices/articlesSlice';
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 
+/**
+ * Renders the ArticleDetailsPage component, which displays the details of a single article.
+ *
+ * @return {JSX.Element} The rendered ArticleDetailsPage component.
+ */
 const ArticleDetailsPage = () => {
-  const { peroid, articleId } = useParams();
-
-  const {
-    data: article,
-    error,
-    isLoading,
-  } = useFetchSingleArticleQuery({
-    period: Number(peroid) || 1,
+  const { period, articleId } = useParams();
+  const { data: article, isLoading } = useFetchSingleArticleQuery({
+    period: Number(period) || 1,
     id: Number(articleId),
   });
-  console.log(article, 'article');
-  if (error) return <div>Article not found</div>;
+
+  if (isLoading || !article) {
+    return <ArticleDetailsSkeleton />;
+  }
 
   return (
     <div>
-      {isLoading ? (
-        <div>Loading</div>
-      ) : (
-        article && (
-          <>
-            <Breadcrumb mb="10">
-              <BreadcrumbItem>
-                <Link to="/">Articles</Link>
-              </BreadcrumbItem>
-
-              <BreadcrumbItem isCurrentPage>
-                <Link to={`/articles/${peroid || 1}/${articleId}`}>
-                  {article.title}
-                </Link>
-              </BreadcrumbItem>
-            </Breadcrumb>
-            <ArticleDetails article={article} />
-          </>
-        )
-      )}
+      <Breadcrumb mb="10">
+        <BreadcrumbItem>
+          <Link to="/">Articles</Link>
+        </BreadcrumbItem>
+        <BreadcrumbItem isCurrentPage>
+          <span>{article.title}</span>
+        </BreadcrumbItem>
+      </Breadcrumb>
+      <ArticleDetails article={article} />
     </div>
   );
 };

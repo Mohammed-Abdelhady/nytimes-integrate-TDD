@@ -13,6 +13,11 @@ import SearchArticles from './SearchArticles';
 import ArticlesPeriods from './ArticlesPeriods';
 import { SlidersHorizontal } from 'lucide-react';
 
+/**
+ * Renders the Articles Sidebar component with both mobile and desktop versions.
+ *
+ * @return {JSX.Element} The rendered Articles Sidebar component.
+ */
 const ArticlesSidebar = () => {
   return (
     <Box>
@@ -27,6 +32,11 @@ const ArticlesSidebar = () => {
     </Box>
   );
 };
+/**
+ * Renders a mobile version of the articles sidebar.
+ *
+ * @return {JSX.Element} The rendered mobile version of the articles sidebar.
+ */
 const ArticlesSidebarMobile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (

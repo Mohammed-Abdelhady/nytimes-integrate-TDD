@@ -7,6 +7,11 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 
+/**
+ * Renders a skeleton component for an article card.
+ *
+ * @return {JSX.Element} The skeleton component for an article card.
+ */
 const ArticleCardSkeleton = () => {
   const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
 

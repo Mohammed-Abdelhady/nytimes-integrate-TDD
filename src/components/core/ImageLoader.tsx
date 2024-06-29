@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 interface ImageLoaderProps {
   src: string;
   alt: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   height?: any;
 }
 

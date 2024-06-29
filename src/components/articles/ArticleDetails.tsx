@@ -7,6 +7,13 @@ import ArticlelSharing from './ArticlelSharing';
 interface ArticleDetailsProps {
   article: IArticle;
 }
+/**
+ * Renders the details of an article.
+ *
+ * @param {Object} props - The props for the ArticleDetails component.
+ * @param {IArticle} props.article - The article object containing the details.
+ * @return {JSX.Element} The rendered ArticleDetails component.
+ */
 const ArticleDetails = ({ article }: ArticleDetailsProps) => {
   const formatDate = () => {
     if (!article.published_date) return '';
