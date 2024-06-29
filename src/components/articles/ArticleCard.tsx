@@ -16,7 +16,11 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
   const [searchParams] = useSearchParams();
   const formatDate = () => {
     if (!article.published_date) return '';
-    return article.published_date.split('T')[0];
+    return new Date(article.published_date).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    });
   };
   return (
     <Box
