@@ -18,13 +18,15 @@ const ArticlesSections = () => {
    * @param {string} section - The section name clicked.
    */
   const handleSectionClick = (section: string) => {
-    setSearchParams(new URLSearchParams({ section }));
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.set('section', section);
+    setSearchParams(newSearchParams.toString());
   };
 
   return (
     <Box>
       <Heading size="md">Sections</Heading>
-      <UnorderedList styleType="none" width="max-content">
+      <UnorderedList styleType="none" width="max-content" minW="100px">
         <ListItem
           as="button"
           display="block"

@@ -45,9 +45,9 @@ export const articlesApi = createApi({
       ) => {
         let articles = response.results;
         if (arg.section) {
-          articles = articles.filter(
-            (article) => article.section === arg.section,
-          );
+          articles = articles.filter((article) => {
+            return article.section === arg.section;
+          });
         }
         if (arg.search) {
           articles = articles.filter((article) =>
