@@ -25,6 +25,13 @@ const ArticlesSections = () => {
     <Box>
       <Heading size="md">Sections</Heading>
       <UnorderedList styleType="none" width="max-content">
+        <ListItem
+          as="button"
+          display="block"
+          mt="3"
+          onClick={() => handleSectionClick('')}>
+          All
+        </ListItem>
         {sections?.map((section) => (
           <ListItem
             as="button"
