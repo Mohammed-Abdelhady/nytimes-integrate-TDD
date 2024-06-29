@@ -1,19 +1,32 @@
 import { Box, Heading, Image, Skeleton, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { IArticle } from 'types/articlesInterface';
 
 interface ArticleCardProps {
   article: IArticle;
 }
+/**
+ * Renders an ArticleCard component.
+ *
+ * @param {ArticleCardProps} props - The props for the ArticleCard component.
+ * @return {JSX.Element} The rendered ArticleCard component.
+ */
 const ArticleCard = ({ article }: ArticleCardProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
-
+  const [searchParams] = useSearchParams();
   const formatDate = () => {
     if (!article.published_date) return '';
     return article.published_date.split('T')[0];
   };
   return (
-    <Box borderWidth="1px" borderRadius="md" p={5}>
+    <Box
+      as={Link}
+      to={`/articles/${searchParams.get('period')}/${article.id}`}
+      borderWidth="1px"
+      borderRadius="md"
+      p={5}
+      maxH="400px">
       <Text fontWeight="bold">{article.section}</Text>
       {/* Image with Skeleton Loading State */}
       <Skeleton isLoaded={imageLoaded} height="200px" width="100%" mb="3">

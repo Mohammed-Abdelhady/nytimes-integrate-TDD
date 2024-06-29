@@ -1,6 +1,6 @@
 import '@fontsource/archivo';
 import { extendBaseTheme, theme as chakraTheme } from '@chakra-ui/react';
-const { Button, Heading, Skeleton } = chakraTheme.components;
+const { Button, Heading, Skeleton, Drawer } = chakraTheme.components;
 
 export const theme = extendBaseTheme({
   components: {
@@ -8,6 +8,7 @@ export const theme = extendBaseTheme({
     Heading,
     Image,
     Skeleton,
+    Drawer,
   },
   fonts: {
     heading: `'Archivo', sans-serif`,

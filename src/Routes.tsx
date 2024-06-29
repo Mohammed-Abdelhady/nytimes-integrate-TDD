@@ -20,7 +20,7 @@ function Routes(): JSX.Element {
       element: <ArticlesListPage />,
     },
     {
-      path: '/articles/:articleId',
+      path: '/articles/:period/:articleId',
       element: <ArticleDetailsPage />,
     },
   ]);
