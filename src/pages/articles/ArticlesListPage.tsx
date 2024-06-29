@@ -1,9 +1,16 @@
 import React from 'react';
 import { useFetchArticlesQuery } from '../../lib/slices/articlesSlice';
-import { Box, Flex, SimpleGrid, Text } from '@chakra-ui/react';
+import { Flex, SimpleGrid } from '@chakra-ui/react';
 import { useSearchParams } from 'react-router-dom';
 import ArticlesSidebar from 'components/articles/ArticlesSidebar';
+import ArticleCard from 'components/articles/ArticleCard';
+import ArticleCardSkeleton from 'components/skeletons/ArticlesListSkeleton';
 
+/**
+ * Renders the ArticlesListPage component, which displays a list of articles fetched from the server.
+ *
+ * @return {JSX.Element} The rendered ArticlesListPage component.
+ */
 const ArticlesListPage = () => {
   const [searchParams] = useSearchParams();
 
@@ -16,24 +23,21 @@ const ArticlesListPage = () => {
     search: searchParams.get('search') || '',
     section: searchParams.get('section') || '',
   });
-  console.log(error, articles, 'articles');
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Something Went Wrong</div>;
+
+  if (error) return <div>Something went wrong</div>;
+
   return (
-    <Flex justify="space-between">
+    <Flex justifyContent="space-between">
       <ArticlesSidebar />
-      <SimpleGrid columns={[1, 2, 3]} gap={4} ml="10">
-        {articles?.map((article) => (
-          <Box
-            borderBottom="solid 1px"
-            bg="blue.500"
-            color="white"
-            key={article.id}>
-            <Text>{article.section}</Text>
-            <Text>{article.title}</Text>
-          </Box>
-        ))}
-      </SimpleGrid>
+      {isLoading ? (
+        <ArticleCardSkeleton />
+      ) : (
+        <SimpleGrid columns={[1, 2, 3]} spacing={5} marginLeft="10">
+          {articles?.map((article) => (
+            <ArticleCard key={article.id} article={article} />
+          ))}
+        </SimpleGrid>
+      )}
     </Flex>
   );
 };
