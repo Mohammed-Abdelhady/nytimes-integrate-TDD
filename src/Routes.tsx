@@ -2,6 +2,8 @@ import React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import ArticlesListPage from './pages/articles/ArticlesListPage';
 import ArticleDetailsPage from './pages/articles/ArticleDetailsPage';
+import LayoutNavBar from './components/navs/LayoutNavBar';
+import { Box, Container } from '@chakra-ui/react';
 
 /**
  * Renders the routes for the application.
@@ -23,7 +25,14 @@ function Routes(): JSX.Element {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <Container maxW={'container.xl'} mx="auto" p="5">
+      <LayoutNavBar />
+      <Box pt="10">
+        <RouterProvider router={router} />
+      </Box>
+    </Container>
+  );
 }
 
 export default Routes;
