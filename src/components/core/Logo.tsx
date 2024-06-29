@@ -1,7 +1,8 @@
 import React from 'react';
-import { Image, useColorMode } from '@chakra-ui/react';
+import { Box, Image, useColorMode } from '@chakra-ui/react';
 import NYLogo from '../../assets/logo.png';
 import NYLogoWhite from '../../assets/logo-white.png';
+import { Link } from 'react-router-dom';
 /**
  * Renders the logo component based on the current color mode.
  *
@@ -12,11 +13,13 @@ const Logo = () => {
 
   return (
     <div>
-      <Image
-        src={colorMode === 'light' ? NYLogo : NYLogoWhite}
-        alt="NYTimes Logo"
-        width={50}
-      />
+      <Box as={Link} to="/">
+        <Image
+          src={colorMode === 'light' ? NYLogo : NYLogoWhite}
+          alt="NYTimes Logo"
+          width={50}
+        />
+      </Box>
     </div>
   );
 };

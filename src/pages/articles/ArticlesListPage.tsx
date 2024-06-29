@@ -36,7 +36,7 @@ const ArticlesListPage = () => {
         <ArticleCardSkeleton />
       ) : (
         <SimpleGrid
-          columns={[1, 2, 3]}
+          columns={[1, 2, 2, 3]}
           spacing={5}
           mx={{ base: 'auto', md: '10px' }}>
           {articles?.map((article) => (

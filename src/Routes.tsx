@@ -17,22 +17,35 @@ function Routes(): JSX.Element {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <ArticlesListPage />,
+      element: (
+        <WrapLayout>
+          <ArticlesListPage />
+        </WrapLayout>
+      ),
     },
     {
       path: '/articles/:period/:articleId',
-      element: <ArticleDetailsPage />,
+      element: (
+        <WrapLayout>
+          <ArticleDetailsPage />
+        </WrapLayout>
+      ),
     },
   ]);
 
   return (
     <Container maxW={'container.xl'} mx="auto" p="5">
-      <LayoutNavBar />
-      <Box pt="10">
-        <RouterProvider router={router} />
-      </Box>
+      <RouterProvider router={router} />
     </Container>
   );
 }
 
+const WrapLayout = ({ children }: { children: JSX.Element }) => {
+  return (
+    <>
+      <LayoutNavBar />
+      <Box mt="10">{children}</Box>
+    </>
+  );
+};
 export default Routes;
