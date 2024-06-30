@@ -1,7 +1,7 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
-import ImageLoader from 'components/core/ImageLoader';
 import { Link, useSearchParams } from 'react-router-dom';
-import { IArticle } from 'types/articlesInterface';
+import { IArticle } from '~/types/articlesInterface';
+import ImageLoader from '../core/ImageLoader';
 
 interface ArticleCardProps {
   article: IArticle;

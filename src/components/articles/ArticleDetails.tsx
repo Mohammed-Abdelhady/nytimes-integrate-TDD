@@ -1,8 +1,8 @@
 import { Box, Center, HStack, Heading, Stack, Text } from '@chakra-ui/react';
-import ImageLoader from 'components/core/ImageLoader';
 import React from 'react';
-import { IArticle } from 'types/articlesInterface';
+import { IArticle } from '~/types/articlesInterface';
 import ArticlelSharing from './ArticlelSharing';
+import ImageLoader from '../core/ImageLoader';
 
 interface ArticleDetailsProps {
   article: IArticle;

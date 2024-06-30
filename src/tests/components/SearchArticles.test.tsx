@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, act } from '@testing-library/react';
 import { useSearchParams } from 'react-router-dom';
-import SearchArticles from 'components/articles/SearchArticles';
+import SearchArticles from '../../components/articles/SearchArticles';
 
 // Mocking useSearchParams hook
 jest.mock('react-router-dom', () => ({

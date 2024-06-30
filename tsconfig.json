@@ -16,9 +16,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "src",
+    "checkJs": true,
     "paths": {
-      "@/*": ["/*"]
-    }
+      "~/*": ["*"]
+    },
+    "types": ["cypress"]
   },
-  "include": ["src", "cypress"]
+  "include": ["src", "cypress/**/*.ts", "cypress/**/*.js"],
+  "exclude": ["jest.config.js"]
 }

@@ -1,9 +1,9 @@
 import { Breadcrumb, BreadcrumbItem } from '@chakra-ui/react';
-import ArticleDetails from 'components/articles/ArticleDetails';
-import ArticleDetailsSkeleton from 'components/skeletons/ArticleDetailsSkeleton';
-import { useFetchSingleArticleQuery } from 'lib/slices/articlesSlice';
+import { useFetchSingleArticleQuery } from '../../lib/slices/articlesSlice';
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import ArticleDetails from '../../components/articles/ArticleDetails';
+import ArticleDetailsSkeleton from '../../components/skeletons/ArticleDetailsSkeleton';
 
 /**
  * Renders the ArticleDetailsPage component, which displays the details of a single article.

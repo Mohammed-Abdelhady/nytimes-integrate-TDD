@@ -2,9 +2,10 @@ import React, { Suspense, lazy } from 'react';
 import { useFetchArticlesQuery } from '../../lib/slices/articlesSlice';
 import { Flex, SimpleGrid } from '@chakra-ui/react';
 import { useSearchParams } from 'react-router-dom';
-import ArticlesSidebar from 'components/articles/ArticlesSidebar';
-import ArticleCardSkeleton from 'components/skeletons/ArticlesListSkeleton';
-const ArticleCard = lazy(() => import('components/articles/ArticleCard'));
+import ArticlesSidebar from '../../components/articles/ArticlesSidebar';
+import ArticleCardSkeleton from '../../components/skeletons/ArticlesListSkeleton';
+
+const ArticleCard = lazy(() => import('../../components/articles/ArticleCard'));
 
 /**
  * Renders the ArticlesListPage component, which displays a list of articles fetched from the server.

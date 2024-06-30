@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import ArticleMockup from './Article.mockup';
-import { IArticle } from 'types/articlesInterface';
-import ArticleCard from 'components/articles/ArticleCard';
+import { IArticle } from '~/types/articlesInterface';
+import ArticleCard from '../../components/articles/ArticleCard';
 import { MemoryRouter } from 'react-router-dom';
 
 describe('ArticleCard', () => {

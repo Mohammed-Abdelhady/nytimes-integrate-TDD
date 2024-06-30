@@ -6,8 +6,8 @@ import {
   UnorderedList,
   ListItem,
 } from '@chakra-ui/react';
-import { useFetchAllSectionsQuery } from 'lib/slices/articlesSlice';
 import { useSearchParams } from 'react-router-dom';
+import { useFetchAllSectionsQuery } from '../../lib/slices/articlesSlice';
 
 /**
  * Displays a list of article sections fetched from the API.
