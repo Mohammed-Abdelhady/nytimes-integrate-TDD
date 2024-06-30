@@ -20,5 +20,5 @@
       "@/*": ["/*"]
     }
   },
-  "include": ["cypress", "src"]
+  "include": ["src", "cypress"]
 }

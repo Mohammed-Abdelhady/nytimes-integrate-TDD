@@ -47,4 +47,12 @@ export default [
       'react/react-in-jsx-scope': 'off', // Disable the rule
     },
   },
+  // Cypress-specific configuration
+  {
+    files: ['cypress/**/*.js', 'cypress/**/*.ts'],
+    env: {
+      'cypress/globals': true,
+    },
+    extends: ['plugin:cypress/recommended'],
+  },
 ];

@@ -12,13 +12,25 @@ import { Link, useParams } from 'react-router-dom';
  */
 const ArticleDetailsPage = () => {
   const { period, articleId } = useParams();
-  const { data: article, isLoading } = useFetchSingleArticleQuery({
+  const {
+    data: article,
+    isLoading,
+    isError,
+  } = useFetchSingleArticleQuery({
     period: Number(period) || 1,
     id: Number(articleId),
   });
 
-  if (isLoading || !article) {
+  if (isLoading) {
     return <ArticleDetailsSkeleton />;
+  }
+
+  if (isError) {
+    return <div data-testid="error-message">Something went wrong</div>;
+  }
+
+  if (!article) {
+    return null;
   }
 
   return (

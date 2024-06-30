@@ -23,8 +23,9 @@ const ArticleDetails = ({ article }: ArticleDetailsProps) => {
       day: '2-digit',
     });
   };
+
   return (
-    <Stack>
+    <Stack data-testid="article-details">
       <Center>
         <Box maxW="800px">
           <ImageLoader
@@ -32,20 +33,24 @@ const ArticleDetails = ({ article }: ArticleDetailsProps) => {
             alt={article.title}
             height={{ base: '200px', sm: '300px', md: '500px' }}
           />
-          <Text fontWeight="100">{article.media[0].copyright}</Text>
+          <Text fontWeight="100" data-testid="article-copyright">
+            {article.media[0].copyright}
+          </Text>
         </Box>
       </Center>
-      <Box borderBottom="solid 1px" pb="10">
-        <Heading mb="3">{article.title}</Heading>
-        <HStack>
+      <Box borderBottom="solid 1px" pb="10" data-testid="article-header">
+        <Heading mb="3" data-testid="article-title">
+          {article.title}
+        </Heading>
+        <HStack data-testid="article-metadata">
           <Text>{formatDate()} </Text>
           <Box w="1px" h="5" bg="gray.500" />
           <Text>{article?.section} </Text>
         </HStack>
         <ArticlelSharing />
       </Box>
-      <Text>{article?.adx_keywords}</Text>
-      <Text pt="10" fontSize="2xl">
+      <Text data-testid="article-keywords">{article?.adx_keywords}</Text>
+      <Text pt="10" fontSize="2xl" data-testid="article-abstract">
         {article.abstract}
       </Text>
     </Stack>

@@ -21,6 +21,7 @@ const ImageLoader = ({ src, alt, height = '293px' }: ImageLoaderProps) => {
         height={height}
         onLoad={() => setImageLoaded(true)}
         style={!imageLoaded ? { display: 'none' } : {}}
+        data-testid="article-image"
       />
     </Skeleton>
   );

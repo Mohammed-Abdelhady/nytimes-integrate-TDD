@@ -15,7 +15,7 @@ import React from 'react';
  */
 const ArticleDetailsSkeleton = () => {
   return (
-    <Stack>
+    <Stack data-testid="article-skeleton">
       <Center>
         <Box w="80vw">
           <Skeleton
