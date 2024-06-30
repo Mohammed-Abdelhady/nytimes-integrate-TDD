@@ -17,6 +17,7 @@ const ArticleCardSkeleton = () => {
 
   return (
     <Grid
+      data-testid="article-card-skeleton"
       width="100%"
       templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}
       gap={5}

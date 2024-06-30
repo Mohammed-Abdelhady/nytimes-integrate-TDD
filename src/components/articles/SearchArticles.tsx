@@ -48,6 +48,7 @@ const SearchArticles = () => {
       borderRadius={'md'}
       onChange={handleSearch}
       value={term}
+      data-testid="search-input"
     />
   );
 };

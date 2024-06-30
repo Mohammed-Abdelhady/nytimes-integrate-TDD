@@ -19,7 +19,7 @@ const ArticlelSharing = () => {
     url: window.location.href,
   };
   return (
-    <HStack mt="5">
+    <HStack mt="5" data-testid="article-sharing">
       <FacebookShareButton {...shareProps}>
         <FacebookIcon size={32} round />
       </FacebookShareButton>{' '}

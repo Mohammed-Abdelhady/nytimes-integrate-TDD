@@ -1,0 +1,74 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2024 The New York Times Company. All Rights Reserved.",
+  "num_results": 20,
+  "results": [
+    {
+      "uri": "nyt://article/1651ac3b-df81-5ffe-9998-f60cbe071acf",
+      "url": "https://www.nytimes.com/2024/06/05/well/eat/avocados-health-benefits-recipes.html",
+      "id": 100000009444032,
+      "asset_id": 100000009444032,
+      "source": "New York Times",
+      "published_date": "2024-06-05",
+      "updated": "2024-06-10 22:02:31",
+      "section": "Well",
+      "subsection": "Eat",
+      "nytdsection": "well",
+      "adx_keywords": "internal-truncator;Avocados;Diet and Nutrition;Recipes;Heart;Cholesterol;Content Type: Service;Oils and Fats;Fiber (Dietary);Blood Pressure;Cooking and Cookbooks;Vegetarianism;Soups;Salads",
+      "column": null,
+      "byline": "By Caroline Hopkins",
+      "type": "Article",
+      "title": "How Healthy Are Avocados?",
+      "abstract": "Here’s a highlight reel of their biggest nutritional benefits, plus delicious recipes to help you enjoy them.",
+      "des_facet": [
+        "internal-truncator",
+        "Avocados",
+        "Diet and Nutrition",
+        "Recipes",
+        "Heart",
+        "Cholesterol",
+        "Content Type: Service",
+        "Oils and Fats",
+        "Fiber (Dietary)",
+        "Blood Pressure",
+        "Cooking and Cookbooks",
+        "Vegetarianism",
+        "Soups",
+        "Salads"
+      ],
+      "org_facet": [],
+      "per_facet": [],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "Bobbi Lin for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2024/06/11/multimedia/05HOW-HEALTHY-AVOCADO4-lkqm/05HOW-HEALTHY-AVOCADO4-lkqm-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2024/06/11/multimedia/05HOW-HEALTHY-AVOCADO4-lkqm/05HOW-HEALTHY-AVOCADO4-lkqm-mediumThreeByTwo210-v2.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2024/06/11/multimedia/05HOW-HEALTHY-AVOCADO4-lkqm/05HOW-HEALTHY-AVOCADO4-lkqm-mediumThreeByTwo440-v2.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    }
+  ]
+}

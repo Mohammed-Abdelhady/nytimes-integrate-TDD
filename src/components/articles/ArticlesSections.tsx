@@ -41,6 +41,7 @@ const ArticlesSections = () => {
       <UnorderedList styleType="none" width="max-content" minW="100px">
         <ListItem>
           <Button
+            data-testid="section-button"
             variant="ghost"
             color={searchParams.get('section') ? 'gray.500' : ''}
             onClick={() => handleSectionClick('')}>
@@ -59,6 +60,7 @@ const ArticlesSections = () => {
                 color={
                   section === searchParams.get('section') ? 'blue.500' : ''
                 }
+                data-testid="section-button"
                 onClick={() => handleSectionClick(section)}>
                 {section}
               </Button>

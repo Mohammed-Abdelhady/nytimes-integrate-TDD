@@ -29,8 +29,11 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
       borderWidth="1px"
       borderRadius="md"
       p={5}
-      maxH="500px">
-      <Text fontWeight="bold">{article.section}</Text>
+      maxH="500px"
+      data-testid="article-card">
+      <Text fontWeight="bold" data-testid="article-section">
+        {article.section}
+      </Text>
       {/* Image with Skeleton Loading State */}
       <ImageLoader
         src={article.media[0]?.['media-metadata'][2]?.url}
@@ -38,10 +41,10 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
         height="200px"
       />
 
-      <Heading size="md" mt="3">
+      <Heading size="md" mt="3" data-testid="article-title">
         {article.title}
       </Heading>
-      <Text fontWeight="light" mt="2">
+      <Text fontWeight="light" mt="2" data-testid="article-date">
         {formatDate()}
       </Text>
     </Box>

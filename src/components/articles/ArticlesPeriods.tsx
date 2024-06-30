@@ -40,6 +40,7 @@ const ArticlesPeriods = () => {
         {PERIODS.map((periodOption) => (
           <ListItem key={periodOption.period}>
             <Button
+              data-testid="period-button"
               variant="ghost"
               color={
                 periodOption.period.toString() === searchParams.get('period')
