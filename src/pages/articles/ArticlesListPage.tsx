@@ -42,7 +42,10 @@ const ArticlesListPage = () => {
           data-testid="articles-list">
           {articles?.map((article) => (
             <Suspense key={article.id}>
-              <ArticleCard article={article} />
+              <ArticleCard
+                article={article}
+                fallback={<ArticleCardSkeleton />}
+              />
             </Suspense>
           ))}
         </SimpleGrid>

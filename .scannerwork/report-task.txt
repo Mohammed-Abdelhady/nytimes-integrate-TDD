@@ -2,5 +2,5 @@ projectKey=nytimes
 serverUrl=http://localhost:9000
 serverVersion=10.6.0.92116
 dashboardUrl=http://localhost:9000/dashboard?id=nytimes
-ceTaskId=7bde753a-988a-4186-b6d5-bdd3e41173bf
-ceTaskUrl=http://localhost:9000/api/ce/task?id=7bde753a-988a-4186-b6d5-bdd3e41173bf
+ceTaskId=184744d7-0050-4c40-bc1a-a8f678347c6d
+ceTaskUrl=http://localhost:9000/api/ce/task?id=184744d7-0050-4c40-bc1a-a8f678347c6d

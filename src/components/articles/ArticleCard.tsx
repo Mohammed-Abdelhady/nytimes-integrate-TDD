@@ -5,6 +5,7 @@ import ImageLoader from '../core/ImageLoader';
 
 interface ArticleCardProps {
   article: IArticle;
+  fallback?: React.ReactNode;
 }
 /**
  * Renders an ArticleCard component.
